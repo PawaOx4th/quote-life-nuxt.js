@@ -53,11 +53,11 @@ export default {
   },
   head() {
     return {
-      title: 'Quote Of Day by PawaOx4th',
+      title: `Quote Of Day |${this.quote.affirmation}`,
       meta: [
         {
-          hid: 'Quote Of Day by PawaOx4th',
-          name: 'Quote Of Day by PawaOx4th',
+          hid: 'Quote Of Day',
+          name: 'Quote Of Day',
           content: 'Home page Quote Of Day by PawaOx4th',
         },
       ],
