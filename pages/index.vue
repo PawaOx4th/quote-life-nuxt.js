@@ -7,7 +7,7 @@
           <h3>" {{ quote.affirmation }}..."</h3>
         </template>
         <template #img>
-          <img :src="profileUrl" />
+          <img :src="cardImg" loading="lazy" />
         </template>
         <template #text class="card-bg">
           <span>-Quote Life-</span>
@@ -16,10 +16,7 @@
     </div>
     <div class="create">
       <vs-avatar>
-        <img
-          src="https://firebasestorage.googleapis.com/v0/b/storage-d2584.appspot.com/o/PawaOx4th_Profile.png?alt=media&token=8577e5a8-aed3-423c-a63c-99e8f131a35f"
-          alt=""
-        />
+        <img :src="profileUrl" alt="pawaOx4th-profile" loading="lazy" />
       </vs-avatar>
       <p>CREATE BY @PAWAO4TH#</p>
     </div>
@@ -39,7 +36,21 @@ export default {
     return {
       quote: '',
       profileUrl:
+        'https://firebasestorage.googleapis.com/v0/b/storage-d2584.appspot.com/o/PawaOx4th_Profile.png?alt=media&token=8577e5a8-aed3-423c-a63c-99e8f131a35f',
+      cardImg:
         'https://images.unsplash.com/photo-1604785435529-5cfa69e3558f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
+    }
+  },
+  head() {
+    return {
+      title: 'Quote Of Day by PawaOx4th',
+      meta: [
+        {
+          hid: 'Quote Of Day by PawaOx4th',
+          name: 'Quote Of Day by PawaOx4th',
+          content: 'Home page Quote Of Day by PawaOx4th',
+        },
+      ],
     }
   },
 }
