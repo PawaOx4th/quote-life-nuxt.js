@@ -23,7 +23,10 @@
       <vs-avatar>
         <img :src="profileUrl" alt="pawaOx4th-profile" loading="lazy" />
       </vs-avatar>
-      <p>CREATE BY @PAWAO4TH#</p>
+      <p>CREATE BY</p>
+      <br />
+
+      <a class="link" href="https://github.com/PawaOx4th"><i>@PAWAO4TH</i></a>
     </div>
   </div>
 </template>
@@ -90,11 +93,18 @@ export default {
   margin-top: 2rem;
   display: flex;
   align-items: center;
+  color: #1a5cff;
 
   p {
     padding-left: 2rem;
     color: #1a5cff;
     font-weight: bold;
+  }
+
+  .link {
+    padding-left: 1rem;
+    color: #4172ee;
+    text-decoration: none;
   }
 }
 </style>
