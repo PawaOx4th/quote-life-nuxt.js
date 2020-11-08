@@ -7,7 +7,12 @@
           <h3>" {{ quote.affirmation }}..."</h3>
         </template>
         <template #img>
-          <img :src="cardImg" loading="lazy" />
+          <img
+            v-if="cardBg.urls.regular"
+            :src="cardBg.urls.regular"
+            loading="lazy"
+          />
+          <img v-else :src="cardImg" loading="lazy" />
         </template>
         <template #text class="card-bg">
           <span>-Quote Life-</span>
@@ -27,14 +32,19 @@
 export default {
   async asyncData(ctx) {
     const quote = await ctx.$axios.$get('https://www.affirmations.dev/')
+    const cardBg = await ctx.$axios.$get(
+      'https://api.unsplash.com/photos/random/?client_id=qId71an2XZyGp5-k44McSHWN465a-xzB3lhIXTu5x7E'
+    )
 
     return {
       quote,
+      cardBg,
     }
   },
   data() {
     return {
       quote: '',
+      cardBg: {},
       profileUrl:
         'https://firebasestorage.googleapis.com/v0/b/storage-d2584.appspot.com/o/PawaOx4th_Profile.png?alt=media&token=8577e5a8-aed3-423c-a63c-99e8f131a35f',
       cardImg:
