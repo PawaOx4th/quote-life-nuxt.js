@@ -1,0 +1,79 @@
+<template>
+  <div class="container">
+    <div>
+      <header class="content-logos"></header>
+      <vs-card>
+        <template #title>
+          <h3>" {{ quote.affirmation }}..."</h3>
+        </template>
+        <template #img>
+          <img :src="profileUrl" />
+        </template>
+        <template #text class="card-bg">
+          <span>-Quote Life-</span>
+        </template>
+      </vs-card>
+    </div>
+    <div class="create">
+      <vs-avatar>
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/storage-d2584.appspot.com/o/PawaOx4th_Profile.png?alt=media&token=8577e5a8-aed3-423c-a63c-99e8f131a35f"
+          alt=""
+        />
+      </vs-avatar>
+      <p>CREATE BY @PAWAO4TH#</p>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  async asyncData(ctx) {
+    const quote = await ctx.$axios.$get('https://www.affirmations.dev/')
+
+    return {
+      quote,
+    }
+  },
+  data() {
+    return {
+      quote: '',
+      profileUrl:
+        'https://images.unsplash.com/photo-1604785435529-5cfa69e3558f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
+    }
+  },
+}
+</script>
+
+<style lang="scss" scoped>
+.container {
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.content-logos {
+  margin-bottom: 2rem;
+}
+
+.vs-card__text {
+  color: #1f9ce4;
+}
+
+.create {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+
+  p {
+    padding-left: 2rem;
+    color: #1a5cff;
+    font-weight: bold;
+  }
+}
+</style>
