@@ -2,6 +2,15 @@
   <div class="container">
     <div>
       <header class="content-logos"></header>
+      <vs-button
+        gradient
+        :to="path.name"
+        :active="active == 1"
+        @click="active = 1"
+      >
+        Image Ratio
+      </vs-button>
+
       <vs-card>
         <template #title>
           <h3>" {{ quote.affirmation }}..."</h3>
@@ -48,6 +57,9 @@ export default {
     return {
       quote: '',
       cardBg: {},
+      path: {
+        name: 'ratio',
+      },
       profileUrl:
         'https://firebasestorage.googleapis.com/v0/b/storage-d2584.appspot.com/o/PawaOx4th_Profile.png?alt=media&token=8577e5a8-aed3-423c-a63c-99e8f131a35f',
       cardImg:
