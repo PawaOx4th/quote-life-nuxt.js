@@ -56,6 +56,7 @@ export default {
   data() {
     return {
       quote: '',
+      active: '',
       cardBg: {},
       path: {
         name: 'ratio',
